@@ -18,7 +18,7 @@ const handleSuccess = (payload)  => ({
 
 const getData = () => (dispatch) => {
     dispatch(handleLoading())
-    fetch("http://localhost:3000/products")
+    fetch("http://localhost:3004/products")
     .then((res) => res.json())
     .then((res) => dispatch(handleSuccess(res)))
     .catch(() => dispatch(handleError()))
@@ -27,7 +27,6 @@ const getData = () => (dispatch) => {
 const handleCurrentProductLoading = () => ({
     type : CURRENT_PRODUCT_LOADING
 })
-
 
 const handleCurrentProductError = () => ({
     type : CURRENT_PRODUCT_ERROR
@@ -41,7 +40,7 @@ const handleCurrentProductSuccess = (payload)  => ({
 
 const getCurrentProductData = (id) => (dispatch) => {
     dispatch(handleCurrentProductLoading())
-    fetch(`http://localhost:3000/products/${id}`)
+    fetch(`http://localhost:3004/products/${id}`)
     .then((res) => res.json())
     .then((res) => dispatch(handleCurrentProductSuccess(res)))
     .catch(() => dispatch(handleCurrentProductError()))
