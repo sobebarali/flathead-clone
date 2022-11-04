@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getCurrentProductData } from "../Redux/Products/action";
 import { useDispatch, useSelector } from "react-redux";
-import { Filter } from "../Components/Filter";
 import  {Product}  from "../Components/Product";
 import {
   Grid,
